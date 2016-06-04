@@ -7,7 +7,7 @@ current_project="$2"
 current_branch=$(git branch | grep "*" | sed 's/* //')
 current_user=$(git config user.email)
 
-if [ -z "$commits" ];
+if [ -z "$(git log origin/master..HEAD)" ];
 then
     echo "No commits."
 fi
@@ -18,7 +18,7 @@ add_card_comment (){
 }
 
 git log origin/$current_branch..HEAD --reverse --pretty=oneline --abbrev-commit \
-| while read commit; 
+| while read commit;
 do 
     commit_id=$(echo "$commit" | awk -F' ' '{print $1}')
     commit_full_msg=$(echo "$commit" | awk -F' ' '{print $2}')
