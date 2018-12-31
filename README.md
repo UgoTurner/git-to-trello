@@ -12,4 +12,9 @@ On each push containing commits with a trello card id (ex: #xxx), creates a comm
 ## Use
 
 * Add at the begining of your commit message "#unique_trello_card_id" (found in the trello card url : trello.com/c/**kMClMV9d**/1-test)
-  * exemple : git commit -m "#kMClMV9d my first git commit in a trello card comment"
+* exemple : 
+  
+  
+  ``` bash
+  git commit -m "#kMClMV9d my first git commit in a trello card comment" 
+  ```
